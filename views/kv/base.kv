@@ -1,0 +1,21 @@
+#:import utils kivy.utils
+#:import Header views.widgets.header
+<ScreenBase>:
+  FloatLayout:
+    canvas.before:
+      Color:
+        rgb: utils.get_color_from_hex('#414141')
+      Rectangle:
+        pos: self.pos
+        size: self.size
+    Header:
+      id: header
+      text: 'Fany toodoo app'
+    Button:
+      text: 'Add'
+      on_press: root.add_note('add')
+      size_hint: 0.3, 0.1
+      background_color: utils.get_color_from_hex('#d08c49')
+      background_normal: ''
+      background_down: ''
+      pos_hint: {'center_x': 0.15, 'center_y': 0.05}

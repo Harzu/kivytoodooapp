@@ -1,0 +1,28 @@
+#:import utils kivy.utils
+<Header>:
+  text: ''
+  canvas:
+    Color:
+      rgb: utils.get_color_from_hex('#d08c49')
+    Rectangle:
+      pos: self.pos
+      size: self.size
+  size_hint: 1, 0.1
+  pos_hint: {'center_x': 0.5, 'center_y': 0.95}
+  Label:
+    text: root.text
+    font_size: '28px'
+    pos_hint: {'center_x': 0.2, 'center_y': 0.5} if root.text == 'Note add' else {'center_x': 0.35, 'center_y': 0.5}
+  Button:
+    size_hint: 0.3, 0.1
+    text: 'search'
+    background_color: utils.get_color_from_hex('#d08c49')
+    background_normal: ''
+    background_down: ''
+    pos_hint: {'center_x': 0.85, 'center_y': 0.5}
+    on_press: root.input_active(searchForm)
+  TextInput:
+    id: searchForm
+    size_hint: 0.7, 0.45
+    pos_hint: {'center_x': 2, 'center_y': 0.5}
+    
