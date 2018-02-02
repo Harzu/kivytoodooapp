@@ -11,13 +11,16 @@ from kivy.uix.screenmanager import ScreenManagerException
 from kivy.core.text import LabelBase
 from views.screenmanager import sm, screens
 
+from kivymd.theming import ThemeManager
+
 from settings import FONTS
 
 class TooDoo(App):
   title = 'TooDoo app'
   screen_manager = None
   target_screen = 'none'
-  
+  theme_cls = ThemeManager()
+  theme_cls.devide_color = 'red'
   def init_app(self):
     self.screen_manager = sm
     self.switch_screen('base')

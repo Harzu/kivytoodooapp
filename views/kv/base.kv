@@ -1,5 +1,7 @@
 #:import utils kivy.utils
 #:import Header views.widgets.header
+#:import NoteList views.widgets.note_list
+#:import MDFloatingActionButton kivymd.button.MDFloatingActionButton 
 <ScreenBase>:
   FloatLayout:
     canvas.before:
@@ -10,12 +12,14 @@
         size: self.size
     Header:
       id: header
-      text: 'Fany toodoo app'
-    Button:
-      text: 'Add'
-      on_press: root.add_note('add')
-      size_hint: 0.3, 0.1
-      background_color: utils.get_color_from_hex('#d08c49')
-      background_normal: ''
-      background_down: ''
-      pos_hint: {'center_x': 0.15, 'center_y': 0.05}
+      text: 'View notes'
+    NoteList:
+      id: notelist
+    # Button:
+    #   text: 'Add'
+    #   on_press: root.add_note('add')
+    #   size_hint: 0.3, 0.1
+    #   background_color: utils.get_color_from_hex('#d08c49')
+    #   background_normal: ''
+    #   background_down: ''
+    #   pos_hint: {'center_x': 0.15, 'center_y': 0.05}
