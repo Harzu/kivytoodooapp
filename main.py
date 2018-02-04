@@ -10,7 +10,6 @@ Config.set('graphics', 'resizable', 0)
 from kivy.uix.screenmanager import ScreenManagerException
 from kivy.core.text import LabelBase
 from views.screenmanager import sm, screens
-
 from kivymd.theming import ThemeManager
 
 from settings import FONTS

@@ -1,6 +1,7 @@
 #:import utils kivy.utils
 #:import Header views.widgets.header
 #:import InputNote views.widgets.input
+#:import MDFloatingActionButton kivymd.button.MDFloatingActionButton 
 <AddNote>:
   FloatLayout:
     canvas.before:
@@ -14,11 +15,17 @@
       text: 'Note add'
     InputNote:
       id: inputNote
-    Button:
-      text: 'Save note'
+    MDFloatingActionButton:
+      id: save_note
+      icon: 'plus'
+      pos_hint: {'x': 0.05, 'y': 0.02}
+      md_bg_color: utils.get_color_from_hex('#fcb46d')
+      text_color:  utils.get_color_from_hex('#F7F7F7')
       on_press: root.save_note('base', inputNote.ids.note_capt.text, inputNote.ids.note_body.text)
-      size_hint: 1, 0.1
-      pos_hint: {'center_x': 0.5, 'center_y': 0.05}
-      background_color: utils.get_color_from_hex('#d08c49')
-      background_normal: ''
-      background_down: ''
+    MDFloatingActionButton:
+      id: undo
+      icon: 'home'
+      pos_hint: {'x': 0.8, 'y': 0.02}
+      md_bg_color: utils.get_color_from_hex('#fcb46d')
+      text_color:  utils.get_color_from_hex('#F7F7F7')
+      on_press: root.undo_screen('base')

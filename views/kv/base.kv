@@ -15,11 +15,10 @@
       text: 'View notes'
     NoteList:
       id: notelist
-    # Button:
-    #   text: 'Add'
-    #   on_press: root.add_note('add')
-    #   size_hint: 0.3, 0.1
-    #   background_color: utils.get_color_from_hex('#d08c49')
-    #   background_normal: ''
-    #   background_down: ''
-    #   pos_hint: {'center_x': 0.15, 'center_y': 0.05}
+    MDFloatingActionButton:
+      id: add_note
+      icon: 'plus'
+      pos_hint: {'x': 0.8, 'y': 0.02}
+      md_bg_color: utils.get_color_from_hex('#fcb46d')
+      text_color:  utils.get_color_from_hex('#F7F7F7')
+      on_press: root.add_note('add')

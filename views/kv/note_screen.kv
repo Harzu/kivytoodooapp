@@ -1,0 +1,49 @@
+#:import utils kivy.utils
+#:import Header views.widgets.header
+<NoteScreen>:
+  FloatLayout:
+    canvas.before:
+      Color:
+        rgb: utils.get_color_from_hex('#414141')
+      Rectangle:
+        pos: self.pos
+        size: self.size
+    Header:
+      id: header
+      text: 'Note'
+    TextInput:
+      id: note_capt
+      text: root.getData()
+      size_hint: 0.95, 0.07
+      pos_hint: {'center_x': 0.5, 'center_y': 0.84}
+      background_color: utils.get_color_from_hex('#414141')
+      background_down: ''
+      foreground_color: 1, 1, 1, 1
+      border: 4,4,4,4
+      padding_x: '10px'
+      font_size: '19pt'
+    TextInput:
+      id: note_body
+      text: root.getData()
+      size_hint: 0.95, 0.66
+      pos_hint: {'center_x': 0.5, 'center_y': 0.46}
+      background_color: utils.get_color_from_hex('#414141')
+      background_down: ''
+      foreground_color: 1, 1, 1, 1
+      border: 4,4,4,4
+      padding_x: '10px'
+      font_size: '19pt'
+    MDFloatingActionButton:
+      id: save_note
+      icon: 'delete'
+      pos_hint: {'x': 0.05, 'y': 0.02}
+      md_bg_color: utils.get_color_from_hex('#fcb46d')
+      text_color:  utils.get_color_from_hex('#F7F7F7')
+      on_press: root.delete('base')
+    MDFloatingActionButton:
+      id: undo
+      icon: 'home'
+      pos_hint: {'x': 0.8, 'y': 0.02}
+      md_bg_color: utils.get_color_from_hex('#fcb46d')
+      text_color:  utils.get_color_from_hex('#F7F7F7')
+      on_press: root.undo_screen('base')
